@@ -67,5 +67,16 @@ cd default-bench
 bench new-site demo.localhost --admin-password admin --mariadb-root-password admin
 bench get-app erpnext
 bench --site demo.localhost install-app erpnext
+```
 
+### Force re-create bench
+
+```sh
+cd
+rm -rf default-bench
+bench init default-bench
+cd default-bench
+bench new-site demo.localhost --admin-password admin --mariadb-root-password admin --force
+bench get-app erpnext
+bench --site demo.localhost install-app erpnext
 ```
