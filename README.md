@@ -14,8 +14,8 @@ dockerd-rootless-setuptool.sh install
 Install ERPNext on your Linux server with just a single command.
 
 ```shell
-$ git clone https://github.com/chillarAnand/one-click-erpnext
-$ cd one-click-erpnext && docker-compose up
+git clone https://github.com/chillarAnand/one-click-erpnext
+cd one-click-erpnext && docker-compose up
 ```
 
 
