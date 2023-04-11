@@ -23,8 +23,14 @@ cd one-click-erpnext && docker-compose up
 
 ```
 export DEBIAN_FRONTEND=noninteractive
+
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ftp.ubuntu-tw.org/mirror/mariadb/repo/10.3/ubuntu xenial main'
+
 sudo apt update -y
-sudo apt-get install -y mysql-server
+
+sudo apt-get install -y mariadb-server
+
 sudo mysql_secure_installation
 
 cat <<EOF > ~/.my.cnf
@@ -47,7 +53,7 @@ collation-server = utf8mb4_unicode_ci
 default-character-set = utf8mb4
 EOF
 
-sudo systemctl mysql restart
+sudo systemctl restart mysql
 
 
 sudo apt install -y redis-server
@@ -69,7 +75,16 @@ bench get-app erpnext
 bench --site demo.localhost install-app erpnext
 ```
 
-### Force re-create bench
+### Trouble shooting
+
+#### MySQL reset password/conf
+
+```
+# check my.cnf file order
+
+```
+
+#### Force re-create bench
 
 ```sh
 cd
